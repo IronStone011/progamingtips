@@ -1,0 +1,32 @@
+<% include partials/header %>
+<div class="ui segment">
+    <h2>Edit <%= post.title %></h2>
+    <form method="post" action="/posts/<%= post._id %>?_method=put" class="ui form">
+                <div class="field">
+                <label>Title</label>
+                <input type="text" name="title" value="<%= post.title %>" required>
+                </div>
+                <div class="field">
+                <label>Category</label>
+                <input type="text" name="category" value="<%= post.category %>" required>
+                </div>
+                <div class="field">
+                <label>Content</label>
+                <textarea name="content" required><%= post.content %></textarea>
+                </div>
+                <div class="field">
+                <label>intro</label>
+                <textarea rows="2" name="intro" required> <%= post.intro %></textarea>
+                </div>
+                <div class="field">
+                <label>Accsess</label>
+                <select name="pr">
+                    <option value="true">Premium</option>
+                    <option value="false">Normal</option>
+                </select>
+                </div>
+                <button class="ui secondary button"> Edit</button>
+    </form>
+    
+</div>
+<% include partials/footer %>

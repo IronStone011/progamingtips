@@ -1,0 +1,19 @@
+<% include partials/header %>
+<div class="ui segment">
+    <% if (post) { %>
+        <h2> <%= post.title %></h2>
+            <h3><%= post.category %></h3>
+            <%- post.content %><br>
+            <h4><%= post.author %></h4>
+        <div class="ui grid">   
+        <form class="sixteen wide column"  method="get" action="/posts/<%= post._id %>/edit" >
+            <button class="ui secondary button">Edit Post</button>
+        </form>
+        <form class="sixteen wide column" method="post" action="/posts/<%= post._id %>?_method=delete" >
+            <button class="ui red button">Delete Post</button>
+        </form>
+        </div> 
+
+    <% } %>
+</div>
+<% include partials/footer %>

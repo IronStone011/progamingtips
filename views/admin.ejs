@@ -1,0 +1,64 @@
+<% include partials/header %>
+    <div class="ui grid">
+        <div class="eight wide column">
+            <h4>Create a new post</h4>
+            <form method="post" action="/admin/new" class="ui form">
+                <div class="field">
+                <label>Title</label>
+                <input type="text" name="title" placeholder="Post Title"required>
+                </div>
+                <div class="field">
+                <label>Category</label>
+                <input type="text" name="category" placeholder="Post Category"required>
+                </div>
+                <div class="field">
+                <label>Content</label>
+                <textarea name="content" required></textarea>
+                </div>
+                <div class="field">
+                <label>intro</label>
+                <textarea rows="2" name="intro" required></textarea>
+                </div>
+                <div class="field">
+                <label>Accsess</label>
+                <select name="pr">
+                    <option value="true">Premium</option>
+                    <option value="false">Normal</option>
+                </select>
+                </div>
+                <button class="ui secondary button" >Create</button>
+            </form>
+        </div>
+        <div class="eight wide column">
+            <h2>Change User accsess</h2>
+            <form method="post" action="/admin/user/changeaccsess?_method=put" class="ui form">
+            <div class="field">
+            <select name="userid" >
+                <% if (users){ %>
+                    <% users.forEach(function(user) { %>
+                       <option value="<%= user._id %>"><%= user.username %> - <small> <%= user.premium %> </small></option> 
+                    <% }); %>
+               <% } %>
+            </select>
+            </div>
+            <div class="field">
+            <select name="premiumstate">
+                <option value="true">Premium</option>
+                <option value="false">Normal</option>
+            </select>
+            </div>
+            <button class="ui secondary button">Change</button>
+            </form>
+        </div>
+    </div>
+<% include partials/footer %>
+
+<!--array1.forEach(function(element) {-->
+<!--  console.log(element);-->
+<!--});-->
+<!--title: String,-->
+<!--//     content: String,-->
+<!--//     author:{type: String, default:"Pro Gaming Tips"},-->
+<!--//     premium: Boolean,-->
+<!--//     filexi: Boolean,-->
+<!--//     file:String-->

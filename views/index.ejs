@@ -1,0 +1,18 @@
+<% include partials/header %>
+<div class="ui grid stackable">
+  <% if (posts) { %>
+                <% posts.forEach(function(post) { %>
+                    <% if (post.premium == false){ %>
+                          <div class="four wide column">
+                              <div class="ui segment">
+                              <h3> <%= post.title %> </h3>
+                              <p> <%= post.intro %></p>
+                              <a class="ui secondary button" href="/posts/<%= post._id %>">Continue ..</a>
+                              </div>
+                          </div>
+                         <% } %>
+                <% }); %>
+                
+             <% } %>
+</div>
+<% include partials/footer %>

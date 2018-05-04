@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+ 
+ <% if (currentUser && currentUser.premium == true){ %>
+    <% if (posts){ %>
+         <% posts.forEach(function(post) { %>
+                    <% if (post.premium == true){ %>
+                          <div class="four wide column">
+                              <div class="ui segment">
+                              <h3> <%= post.title %> </h3>
+                              <p> <%= post.intro %></p>
+                              <a class="ui secondary button" href="/posts/<%= post._id %>">Continue ..</a>
+                              </div>
+                          </div>
+                         <% } %>
+                <% }); %>
+     <% } %>
+     
+ <% } else { %>
+ <div class="ui segment">
+         <h2>By Upgrading to premium you gain</h2>
+            <div class="ui ordered list">Written Guides for 
+                <div class="item">Item stats</div>
+                <div class="item">Crafting specialty tips</div>
+                <div class="item">Pricing help</div>
+                <div class="item">Build Suggestions</div>
+                <div class="item">Bossing Guides</div>
+                <div class="item">poe.trade tricks</div>
+                <div class="item">Corrupting guide</div>
+                <div class="item">Gain Access to Discord Premium Channel</div>
+            <div class="ui segment">
+            <p>Channel Where premium users have a free 1 hour long question session where you can get feedback from me.<br>
+            You will also have access to the changing flavour item of the week.<br>Some Cool videos</p>
+            </div>
+        </div>
+    </div>
+    <% } %>
+<% include partials/footer %>

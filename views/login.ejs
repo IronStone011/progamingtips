@@ -1,0 +1,15 @@
+<% include partials/header %>
+<div class="ui segment container ">
+<form method="post" action="/login" class="ui form">
+        <div class="field required">
+            <label>Username</label>
+            <input type="text" name="username" required>
+        </div>
+        <div class="field required">
+            <label>Password</label>
+            <input type="password" name="password" required>
+        </div>
+        <button class="ui button secondary">Submit</button>
+</form>
+</div>
+<% include partials/footer %>

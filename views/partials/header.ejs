@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>ProGamingTips</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/mian.css">
+        <meta name="author" content="Iron Stone">
+        <meta name="description" content="learn the best path of exile money making methods">
+    </head>
+    <body>
+    
+    <div class="ui menu inverted stackable">
+        <div class="ui container">
+      <a class="item" href="/">Home</a>
+      <a class="item" href="/posts">Posts</a>
+      <a class="item" href="/premium">Premium</a>
+      <a class="item" href="/contact">Contact Us</a>
+      <div class="right menu">
+        <% if (currentUser) { %>
+        <a class="ui item" href="/logout">Sign Out</a>
+            <% if (currentUser.admin == true) { %>
+                <a class="ui item" href="/admin">Admin</a>
+            <% } %>
+        <% } else { %>
+        <a class="ui item" href="/login">Sign in</a>
+        <a class="ui item" href="/register">Register</a>
+        <% } %>
+      </div>
+    </div>
+    </div>
+<div class="ui container">
+    <% if(error && error.length > 0){ %>
+        <div class="ui message">
+             <i class="close icon"></i>
+             <p class="red"><%= error %></p>
+             </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="ui message">
+            <i class="close icon"></i>
+             <p><%= success %></p>
+             </div>
+        <% } %>
+    
+    
+    
