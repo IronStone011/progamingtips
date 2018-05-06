@@ -19,7 +19,7 @@ const  express = require("express"),
 
 // Configurations
     // Mongoose
-    var db = 'mongodb://ironstone:ironstone@ds163119.mlab.com:63119/progamingtips';
+    var db = process.env.DBURL;
     mongoose.connect(db);
     // Passport
     app.use(require("express-session")({
@@ -61,5 +61,4 @@ const  express = require("express"),
 // Turning on server
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Pro Gaming Tips is Now Online");
-   console.log(process.env.DBURL);
 });
