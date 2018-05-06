@@ -48,7 +48,7 @@ const  express = require("express"),
 // Routes
     // Main Routes
     app.get("/test", (req, res) => {
-        res.render("spreed/essence");
+        res.render("spreed/item");
     });
     app.use(indexRoutes);
     app.use("/posts", PostRoutes);
@@ -61,4 +61,5 @@ const  express = require("express"),
 // Turning on server
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Pro Gaming Tips is Now Online");
+   console.log(process.env.DBURL);
 });
